@@ -68,7 +68,8 @@ class TargetedIDTest extends TestCase
         $result = self::processFilter($config, $request);
         $attributes = $result['Attributes'];
         $this->assertArrayHasKey('eduPersonTargetedID', $attributes);
-        $this->assertMatchesRegularExpression('/^[0-9a-f]{40}$/', $attributes['eduPersonTargetedID'][0]);
+        $this->assertRegExp('/^[0-9a-f]{40}$/', $attributes['eduPersonTargetedID'][0]);
+//        $this->assertMatchesRegularExpression('/^[0-9a-f]{40}$/', $attributes['eduPersonTargetedID'][0]);
     }
 
 
@@ -97,7 +98,8 @@ class TargetedIDTest extends TestCase
         $result = self::processFilter($config, $request);
         $attributes = $result['Attributes'];
         $this->assertArrayHasKey('eduPersonTargetedID', $attributes);
-        $this->assertMatchesRegularExpression('/^[0-9a-f]{40}$/', $attributes['eduPersonTargetedID'][0]);
+        $this->assertRegExp('/^[0-9a-f]{40}$/', $attributes['eduPersonTargetedID'][0]);
+//        $this->assertMatchesRegularExpression('/^[0-9a-f]{40}$/', $attributes['eduPersonTargetedID'][0]);
     }
 
 
@@ -124,8 +126,9 @@ class TargetedIDTest extends TestCase
 //        );
 //        $result = self::processFilter($config, $request);
 //        $attributes = $result['Attributes'];
-//        $this->assertArrayHasKey('eduPersonTargetedID', $attributes);
+//        $this->assertRegExp('eduPersonTargetedID', $attributes);
 //        $this->assertMatchesRegularExpression(
+////        $this->assertMatchesRegularExpression(
 //            '#^<saml:NameID xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" NameQualifier="urn:example:src:id"' .
 //            ' SPNameQualifier="joe"' .
 //            ' Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">joe</saml:NameID>$#',
