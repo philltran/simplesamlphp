@@ -239,7 +239,8 @@ class SAMLBuilderTest extends TestCase
         $entityDescriptorXml = $samlBuilder->getEntityDescriptorText();
 
         $protocols = implode(' ', $metadata['protocols']);
-        $this->assertMatchesRegularExpression(
+//        $this->assertMatchesRegularExpression(
+        $this->assertRegexp(
             '/<md:AttributeAuthorityDescriptor protocolSupportEnumeration="' . $protocols . '">/',
             $entityDescriptorXml
         );
